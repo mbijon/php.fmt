@@ -15,7 +15,7 @@ while (($uri = array_shift($argv))) {
 	} else {
 		$dir = new RecursiveDirectoryIterator($uri);
 		$it = new RecursiveIteratorIterator($dir);
-		$files = new RegexIterator($it, '/^.+\.in$/i', RecursiveRegexIterator::GET_MATCH);
+		$files = new RegexIterator($it, '/^.+\.php$/i', RecursiveRegexIterator::GET_MATCH);
 		foreach ($files as $file) {
 			$file = $file[0];
 			echo $file;
